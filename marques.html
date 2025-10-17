@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marques de Cosmétiques</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4145a;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 180px;
+            text-decoration: none;
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .brand-card:hover::before {
+            left: 100%;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 20, 90, 0.2);
+        }
+
+        .logo-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .brands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            .brand-card {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💄 Marques de Cosmétiques</h1>
+        <p class="subtitle">Collection Premium de Beauté</p>
+        
+        <div class="brands-grid">
+            <a href="maybelline.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/MYBELLINE.jpg" alt="Maybelline">
+                </div>
+            </a>
+
+            <a href="loreal.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/OREAL.jpg" alt="L'Oréal">
+                </div>
+            </a>
+
+            <a href="nyx.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/NYX.jpg" alt="NYX">
+                </div>
+            </a>
+
+            <a href="flormar.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/Flormar.jpg" alt="Flormar">
+                </div>
+            </a>
+
+            <a href="essence.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/Essence.jpg" alt="Essence">
+                </div>
+            </a>
+
+            <a href="catrice.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/Catrice.jpg" alt="Catrice">
+                </div>
+            </a>
+
+            <a href="topface.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/TopeFace.jpg" alt="TopFace">
+                </div>
+            </a>
+
+            <a href="rimmel.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/Rimmel.jpg" alt="Rimmel">
+                </div>
+            </a>
+
+            <a href="kiko.html" class="brand-card">
+                <div class="logo-container">
+                    <img src="Logo/KIKO.jpg" alt="KIKO Milano">
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
