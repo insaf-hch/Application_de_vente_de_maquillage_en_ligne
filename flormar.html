@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLORMAR COSMETICS - Boutique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: white;
+        }
+
+        /* Header */
+        header {
+            background: rgb(235, 103, 132);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ff1744;
+        }
+
+        .search-icon {
+            display: none;
+        }
+
+        .logo {
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo-subtext {
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-selector {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Products Section */
+        .products-container {
+            max-width: 1600px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ff1744;
+            font-size: 18px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            min-height: 60px;
+            line-height: 1.4;
+        }
+
+        .product-variants {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 15px;
+            background: #000;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .buy-btn:hover {
+            background: #333;
+        }
+
+
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 15px 20px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 11px;
+            }
+
+            .products-container {
+                padding: 0 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <button class="back-btn" onclick="window.history.back()">← Retour</button>
+            <div class="logo">
+                <div class="logo-text">FLORMAR</div>
+                <div class="logo-subtext">COSMETICS</div>
+            </div>
+            <div class="header-right">
+                <button class="lang-selector">FR ▼</button>
+                <div class="user-icon">👤</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/FlormarGlam.jpg" alt="lip">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Crème éclaircissante GLAM STROBING</div>
+                    <div class="product-variants">16 NUANCES</div>
+                    <div class="product-price">99Dh</div>
+                    <a href="https://flormar.ma/product/creme-eclaircissante-glam-strobing?sku=31000107-001&gift=" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/flormarGlow.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Glow drops highlighter</div>
+                    <div class="product-variants">16 NUANCES</div>
+                    <div class="product-price">83.30Dh</div>
+                    <a href="https://flormar.ma/product/glow-drops-highlighter?sku=31000176-001&gift=" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/flormarMood.jpg" alt="Fond de teint">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Illuminateur Mood Booster</div>
+                    <div class="product-variants">40 NUANCES</div>
+                    <div class="product-price">76.30Dh</div>
+                    <a href="https://flormar.ma/product/mood-booster-illuminator?sku=31000228-001&gift=" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/flormarPoudre.jpg" alt="Gloss">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Poudre illuminatrice</div>
+                    <div class="product-variants">18 NUANCES</div>
+                    <div class="product-price">149Dh</div>
+                    <a href="https://flormar.ma/product/poudre-illuminatrice?sku=31000238-001&gift=" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/flormarStich.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Highlighter stick</div>
+                    <div class="product-variants">8 NUANCES</div>
+                    <div class="product-price">109Dh</div>
+                    <a href="https://flormar.ma/product/highlighter-stick?sku=0111164-001&gift=" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Flormar_img/flormarVernis.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Vernis à ongles Pearly</div>
+                    <div class="product-variants">24 NUANCES</div>
+                    <div class="product-price">27.30Dh</div>
+                    <a href="https://www.flormar.ma/product/vernis-a-ongles-pearly?sku=34000080-PL450" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

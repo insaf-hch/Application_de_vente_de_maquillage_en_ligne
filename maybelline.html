@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAYBELLINE NEW YORK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: white;
+        }
+
+        /* Header */
+        header {
+            background: #000;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ff1744;
+        }
+
+        .search-icon {
+            display: none;
+        }
+
+        .logo {
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo-subtext {
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-selector {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Products Section */
+        .products-container {
+            max-width: 1600px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ff1744;
+            font-size: 18px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            min-height: 60px;
+            line-height: 1.4;
+        }
+
+        .product-variants {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 15px;
+            background: #000;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .buy-btn:hover {
+            background: #333;
+        }
+
+
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 15px 20px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 11px;
+            }
+
+            .products-container {
+                padding: 0 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <button class="back-btn" onclick="window.history.back()">← Retour</button>
+            <div class="logo">
+                <div class="logo-text">MAYBELLINE</div>
+                <div class="logo-subtext">NEW YORK</div>
+            </div>
+            <div class="header-right">
+                <button class="lang-selector">FR ▼</button>
+                <div class="user-icon">👤</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/Lip.jpg" alt="lip">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Rouge à lèvres liquide longue tenue Super Stay 24® Hour en 2 étapes</div>
+                    <div class="product-variants">16 NUANCES</div>
+                    <div class="product-price">15,00 $</div>
+                    <a href="https://www.maybelline.com/lip-makeup/lipstick/superstay-24-liquid-lipstick?variant=Wear+On+Wildberry" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/conciler.jpg" alt="conciler">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Anti-cernes multi-usages Instant Age Rewind® Eraser</div>
+                    <div class="product-variants">16 NUANCES</div>
+                    <div class="product-price">12,99 $</div>
+                    <a href="https://www.maybelline.com/face-makeup/concealer/instant-age-rewind-eraser-dark-circles-concealer-treatment?variant=122" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/fonddetent.jpg" alt="Fond de teint">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">FOND DE TEINT FIT ME® MATTE + PORELESS</div>
+                    <div class="product-variants">40 NUANCES</div>
+                    <div class="product-price">11,99  $</div>
+                    <a href="https://www.maybelline.com/face-makeup/foundation/fit-me-matte-poreless-foundation" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/ggloss.jpg" alt="Gloss">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Fard à joues et poudre bronzante liquide multi-usages Sunkisser</div>
+                    <div class="product-variants">18 NUANCES</div>
+                    <div class="product-price">11,99 $</div>
+                    <a href="https://www.maybelline.com/face-makeup/blush-and-bronzer/sunkisser-multi-use-liquid-blush-and-bronzer?variant=Downtown+Rush" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/lipstik.jpg" alt="lip">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Stick visage multi-usages LIFTER STIX™</div>
+                    <div class="product-variants">8 NUANCES</div>
+                    <div class="product-price">12,99  $</div>
+                    <a href="https://www.maybelline.com/face-makeup/contouring/lifter-stix-multi-use-face-stick?variant=65" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/powder.jpg" alt="pawder">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Fond de teint poudre hybride Super Stay® jusqu'à 24 heures</div>
+                    <div class="product-variants">24 NUANCES</div>
+                    <div class="product-price">15,99  $</div>
+                    <a href="https://www.maybelline.com/face-makeup/powder/super-stay-powder-foundation?variant=118" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/Rougealevre.jpg" alt="Eyeliner">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="product-name">Color Sensational® The Creams Rouge à lèvres finition crème</div>
+                    <div class="product-variants">6 NUANCES</div>
+                    <div class="product-price">8,99  $</div>
+                    <a href="https://www.maybelline.com/lip-makeup/lipstick/color-sensational-the-creams-cream-finish-lipstick-makeup?variant=Pink+Wink" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="maybelin/maskara.jpg" alt="Poudre">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="product-name">Le mascara waterproof Falsies® Surreal Extensions pour le maquillage des yeux</div>
+                    <div class="product-variants">12 NUANCES</div>
+                    <div class="product-price">13,99  $</div>
+                    <a href="https://www.maybelline.com/eye-makeup/mascara/the-falsies-surreal-extensions-waterproof-mascara-eye-makeup?variant=Very+Black" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

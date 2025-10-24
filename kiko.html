@@ -34,20 +34,66 @@
             margin: 0 auto;
         }
 
-        .search-bar {
-            display: none;
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ff1744;
         }
 
         .logo {
-            flex: 1;
             text-align: center;
+            flex: 1;
         }
 
-        .logo img {
-            height: 40px;
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
         }
 
-       
+        .logo-subtext {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-selector {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .search-bar {
+            display: none;
+        }
 
         .icon-btn {
             background: none;
@@ -179,10 +225,13 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: background 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
         }
 
         .buy-btn:hover {
-            background: #000;
+            background: black;
         }
 
         @media (max-width: 768px) {
@@ -190,13 +239,12 @@
                 padding: 15px 20px;
             }
 
-            nav {
-                padding: 10px 20px;
+            .logo-text {
+                font-size: 22px;
             }
 
-            .nav-menu {
-                gap: 15px;
-                font-size: 12px;
+            .logo-subtext {
+                font-size: 10px;
             }
 
             .products-container {
@@ -211,42 +259,42 @@
             .search-bar {
                 flex: 1;
             }
-        .menu-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding: 5px;
-        }
-
-        .menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            display: block;
-            border-radius: 2px;
-        }
             
+            .menu-btn {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                padding: 5px;
+            }
+
+            .menu-btn span {
+                width: 25px;
+                height: 3px;
+                background: white;
+                display: block;
+                border-radius: 2px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-         <div class="header-top">
-            <button class="menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="header-top">
+            <button class="back-btn" onclick="window.history.back()">← Retour</button>
             <div class="logo">
-                <img src="kiko/kikooo.jpg" alt="KIKO MILANO">
+                <div class="logo-text">KIKO MILANO</div>
+                <div class="logo-subtext">COSMETICS</div>
+            </div>
+            <div class="header-right">
+                <button class="lang-selector">FR ▼</button>
+                <div class="user-icon">👤</div>
             </div>
         </div>
-
     </header>
 
     <div class="products-container">
@@ -266,7 +314,7 @@
                     </div>
                     <div class="product-price">13,00 $</div>
                     <div class="product-variants">18 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/everlasting-colour-precision-lip-liner-505-20990/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -285,7 +333,7 @@
                     </div>
                     <div class="product-price">15,00 $</div>
                     <div class="product-variants">27 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/gossamer-emotion-creamy-lipstick-103-46659/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -304,7 +352,7 @@
                     </div>
                     <div class="product-price">15,00 $</div>
                     <div class="product-variants">21 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/fr/fard-a-paupieres" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -323,7 +371,7 @@
                     </div>
                     <div class="product-price">18,00 $</div>
                     <div class="product-variants">12 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/matte-fusion-pressed-powder-01-42686/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -342,7 +390,7 @@
                     </div>
                     <div class="product-price">16,00 $</div>
                     <div class="product-variants">6 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/3d-hydra-xtreme-lipgloss-03-47808/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -361,7 +409,7 @@
                     </div>
                     <div class="product-price">18,00 $</div>
                     <div class="product-variants">3 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/24h-long-lasting-panoramic-volume-mascara-13296/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -380,7 +428,7 @@
                     </div>
                     <div class="product-price">16,00 $</div>
                     <div class="product-variants">15 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/fr/eye-liner" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
 
@@ -399,7 +447,7 @@
                     </div>
                     <div class="product-price">28,00 $</div>
                     <div class="product-variants">4 teintes disponibles</div>
-                    <button class="buy-btn">Acheter</button>
+                    <a href="https://www.kikocosmetics.com/en-us/p/master-eyeshadow-palette-02-20917/" class="buy-btn" target="_blank">Acheter</a>
                 </div>
             </div>
         </div>

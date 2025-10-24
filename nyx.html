@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYX - Boutique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f8f8;
+        }
+
+        /* Header */
+        header {
+            background: #2d2d2d;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ff1744;
+        }
+
+        .logo {
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-selector {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .search-bar {
+            display: none;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Products Section */
+        .products-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 18px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: #999;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            min-height: 48px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .reviews {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-variants {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 14px;
+            background: #2d2d2d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .buy-btn:hover {
+            background: black;
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 15px 20px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            .logo-subtext {
+                font-size: 10px;
+            }
+
+            .products-container {
+                padding: 0 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .search-bar {
+                flex: 1;
+            }
+            
+            .menu-btn {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                padding: 5px;
+            }
+
+            .menu-btn span {
+                width: 25px;
+                height: 3px;
+                background: white;
+                display: block;
+                border-radius: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <button class="back-btn" onclick="window.history.back()">← Retour</button>
+            <div class="logo">
+                <div class="logo-text">NYX</div>
+                <div class="logo-subtext">PROFESSIONAL MAKEUP</div>
+            </div>
+            <div class="header-right">
+                <button class="lang-selector">FR ▼</button>
+                <div class="user-icon">👤</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxBlush.jpg" alt="Crayon à lèvres">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Fard à joues poudre ultra-pigmenté, doux et onctueux.</div>
+                    <div class="product-name">Fard à joues au beurre fondu</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(394)</span>
+                    </div>
+                    <div class="product-price">11,00 $</div>
+                    <div class="product-variants">18 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/face/blush/buttermelt-blush/NYX_1104.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxbutter.jpg" alt="Rouge à lèvres">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Gloss au beurre préféré des fans</div>
+                    <div class="product-name">Gloss à lèvres non collant Butter Gloss</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(689)</span>
+                    </div>
+                    <div class="product-price">6,00 $</div>
+                    <div class="product-variants">27 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/lip/lip-gloss/butter-gloss-non-sticky-lip-gloss/NYX_089.html?dwvar_NYX__089_color=Strawberry%20Cheesecake" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxheihglass.jpg" alt="glass">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Poudre fixatrice de maquillage Glass Skin</div>
+                    <div class="product-name">Poudre de finition à haute teneur en verre</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(389)</span>
+                    </div>
+                    <div class="product-price">6,00 $</div>
+                    <div class="product-variants">21 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/face/powder/high-glass-finishing-powder/NYX_800.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxlip.jpg" alt="lip">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">SMUSHY Un rouge à lèvres mat et doux, modulable.</div>
+                    <div class="product-name">BAUME À LÈVRES MAT SMUSHY</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(496)</span>
+                    </div>
+                    <div class="product-price">9,00 $</div>
+                    <div class="product-variants">12 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/lip/lip-balm/smushy-matte-lip-balm/NYX_1143.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxliplingerie.jpg" alt="lip">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Crayon à lèvres à pointe feutre pour un résultat nude parfait,</div>
+                    <div class="product-name">Crayon à lèvres Lip Lingerie</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(47)</span>
+                    </div>
+                    <div class="product-price">16,00 $</div>
+                    <div class="product-variants">6 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/lip/lip-liner/lip-lingerie-lip-liner-stain/NYX_1162.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxpino.jpg" alt="pino">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Crayon à sourcils transparent Fill & Fluff Pommade</div>
+                    <div class="product-name">Crayon pommade à sourcils transparent</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(523)</span>
+                    </div>
+                    <div class="product-price">14,00 $</div>
+                    <div class="product-variants">3 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/eye/eyebrow/fill-fluff-clear-brow-pomade-pencil/NYX_840.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxpinogris.jpg" alt="pino">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Un eye-liner ultra-précis, résistant à l'eau et durable 24/24. </div>
+                    <div class="product-name">Crayon à encre Bridgerton Royal Epic Ink Glitz</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(312)</span>
+                    </div>
+                    <div class="product-price">11,00 $</div>
+                    <div class="product-variants">15 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/eye/eyeliner/bridgerton-royal-epic-ink-liner-glitz/NYX_1171.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="nyx/nyxVrayon.jpg" alt="Eyeliner">
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Crayon eye-liner résistant à l'eau et à fort impact</div>
+                    <div class="product-name">Stick eye-liner waterproof Epic Wear</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(678)</span>
+                    </div>
+                    <div class="product-price">9,00 $</div>
+                    <div class="product-variants">4 teintes disponibles</div>
+                    <a href="https://www.nyxcosmetics.com/eye/eyeliner/epic-wear-waterproof-eyeliner-stick/NYX_901.html" class="buy-btn" target="_blank">Acheter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
