@@ -11,31 +11,102 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 100%);
-            padding: 40px 20px;
-            min-height: 100vh;
+        
+            body {
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(45deg, #ffc1cc 0%, #ffe4e1 50%, #fff5f7 100%);
+                padding: 40px 20px;
+                min-height: 100vh;
         }
+ 
+ 
+
+        /* Effet de brillance animé (shine) */
+        .header-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+
+        /* Pour le sous-titre également */
+        .header-bar .subtitle {
+            animation: subtitlePulse 2s infinite ease-in-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes subtitlePulse {
+            0%, 100% {
+                opacity: 0.95;
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+            }
+        }
+
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        h1 {
+        .header-bar {
+            background: #C15B77;
+            border-radius: 15px;
+            padding: 30px 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(212, 20, 90, 0.3);
             text-align: center;
-            color: #d4145a;
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 50px;
+        .header-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+        }
+
+        .header-bar h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-bar .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
         }
 
         .brands-grid {
@@ -98,8 +169,14 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
+            .header-bar {
+                padding: 25px 20px;
+            }
+            .header-bar h1 {
                 font-size: 2em;
+            }
+            .header-bar .subtitle {
+                font-size: 1.1em;
             }
             .brands-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -110,11 +187,14 @@
             }
         }
     </style>
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>💄 Marques de Cosmétiques</h1>
-        <p class="subtitle">Collection Premium de Beauté</p>
+        <div class="header-bar">
+            <h1> Univers Beauté & Cosmétiques </h1>
+            <p class="subtitle">Explorez le monde des marques de makeup prestigieuses</p>
+        </div>
         
         <div class="brands-grid">
             <a href="maybelline.html" class="brand-card">

@@ -4,220 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> E.L.F - Boutique</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: white;
-        }
-
-        /* Header */
-        header {
-            background: #969696;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .back-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s;
-        }
-
-        .back-btn:hover {
-            color: #ff1744;
-        }
-
-        .search-icon {
-            display: none;
-        }
-
-        .logo {
-            text-align: center;
-            flex: 1;
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .logo-subtext {
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .lang-selector {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .user-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Products Section */
-        .products-container {
-            max-width: 1600px;
-            margin: 40px auto;
-            padding: 0 40px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: white;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 20px;
-        }
-
-        .product-info {
-            padding: 20px 0;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-
-        .stars {
-            color: #ff1744;
-            font-size: 18px;
-        }
-
-        .product-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            min-height: 60px;
-            line-height: 1.4;
-        }
-
-        .product-variants {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .buy-btn {
-            width: 100%;
-            padding: 15px;
-            background: #000;
-            color: white;
-            border: none;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-        }
-
-        .buy-btn:hover {
-            background: #333;
-        }
-
-
-        @media (max-width: 768px) {
-            .header-top {
-                padding: 15px 20px;
-            }
-
-            .nav-menu {
-                gap: 15px;
-                font-size: 11px;
-            }
-
-            .products-container {
-                padding: 0 20px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .product-image {
-                height: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="elf.css">
 </head>
+
 <body>
     <header>
         <div class="header-top">
@@ -238,96 +27,96 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/catriceBomb.jpg" alt="lip">
+                    <img src="ELF/ELF_blush.jpg" alt="lip">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★☆</span>
                     </div>
-                    <div class="product-name">Shine Bomb Lip Lacquer rouge à lèvres</div>
+                    <div class="product-name">Teinte de blush Sheer For It</div>
                     <div class="product-variants">16 NUANCES</div>
-                    <div class="product-price">50,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/944523/shine-bomb-lip-lacquer" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">6 $</div>
+                    <a href="https://www.elfcosmetics.com/sheer-for-it-blush-tint/300251.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
 
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/CatriceLipBomb.jpg" alt="">
+                    <img src="ELF/elfbrosse.jpg" alt="">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★★</span>
                     </div>
-                    <div class="product-name">Shine Bomb Lip Lacquer rouge à lèvres</div>
+                    <div class="product-name">Pinceau mélangeur de teintures et de taches</div>
                     <div class="product-variants">16 NUANCES</div>
-                    <div class="product-price">50,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/944517/shine-bomb-lip-lacquer" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">6 $</div>
+                    <a href="https://www.elfcosmetics.com/stain-and-tint-blending-brush/81876.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
 
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/catriceLiquide.jpg" alt="Fond de teint">
+                    <img src="ELF/elfcurl.jpg" alt="Fond de teint">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★☆</span>
                     </div>
-                    <div class="product-name">HD Liquid Coverage Foundation fond de teint</div>
+                    <div class="product-name">Mascara Incredi-curl</div>
                     <div class="product-variants">40 NUANCES</div>
-                    <div class="product-price">88,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/903438/hd-liquid-coverage-foundation" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">9 $</div>
+                    <a href="https://www.elfcosmetics.com/incredicurl-mascara/300250.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
 
             <!-- Product 4 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/catriceoil.jpg" alt="Gloss">
+                    <img src="ELF/elffard.jpg" alt="">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★★</span>
                     </div>
-                    <div class="product-name">Glossin' Glow Tinted Lip Oil huile à lèvres</div>
+                    <div class="product-name">Fard à paupières pailleté Fine as Fleck</div>
                     <div class="product-variants">18 NUANCES</div>
-                    <div class="product-price">47,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/941961/glossin-glow-tinted-lip-oil" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">7 $</div>
+                    <a href="https://www.elfcosmetics.com/fine-as-fleck-glitter-eyeshadow/300243.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
 
             <!-- Product 5 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/catriceSoftfilter.jpg" alt="lip">
+                    <img src="ELF/elfputtblush.jpg" alt="lip">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★★</span>
                     </div>
-                    <div class="product-name">Soft Glam Filter Fluid</div>
+                    <div class="product-name">Putty Blush</div>
                     <div class="product-variants">8 NUANCES</div>
-                    <div class="product-price">88,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/941930/soft-glam-filter-fluid" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">8 $</div>
+                    <a href="https://www.elfcosmetics.com/putty-blush/300170.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
 
             <!-- Product 6 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="catrice_img/catriceTrue.jpg" alt="">
+                    <img src="ELF/elfSkin.jpg" alt="">
                 </div>
                 <div class="product-info">
                     <div class="product-rating">
                         <span class="stars">★★★★☆</span>
                     </div>
-                    <div class="product-name">True Skin fond de teint hydratant</div>
+                    <div class="product-name">Gouttes bronzantes</div>
                     <div class="product-variants">24 NUANCES</div>
-                    <div class="product-price">88,00 MAD*</div>
-                    <a href="https://www.catrice.eu/fr-ma/p/927721/true-skin-hydrating-foundation#overlay=zoom-desktop" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
+                    <div class="product-price">13 $</div>
+                    <a href="https://www.elfcosmetics.com/bronzing-drops/300240.html" class="buy-btn" target="_blank">ACHETEZ MAINTENANT</a>
                 </div>
             </div>
         </div>
