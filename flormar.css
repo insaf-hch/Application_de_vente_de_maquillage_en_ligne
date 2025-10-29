@@ -204,7 +204,7 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 gap: 15px;
             }
-
+            
             .product-image {
                 height: 250px;
             }
